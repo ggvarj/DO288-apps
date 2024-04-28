@@ -17,11 +17,11 @@ ADD   https://github.com/RedHatTraining/DO288-apps/releases/download/OCP-4.1-1/h
 COPY  run-app.sh /opt/app-root/bin/
 
 RUN   chgrp -R 0 /opt/app-root && \
-      chmod -R g-u /opt/app-root
+      chmod -R g=u /opt/app-root
 
 EXPOSE 8080
 
-USER  1002
+USER  1001
 
 # Run the fat JAR
 CMD   /opt/app-root/bin/run-app.sh
